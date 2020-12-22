@@ -1,0 +1,10 @@
+Package: causalizeR
+Type: Package
+Title: causalizeR: A simple R algorithm to extract causal linkages between words in unstructured texts 
+Version: 0.1.0
+Author: Francisco Javier Ancin-Murguzur and Vera Hausner
+Maintainer: Francisco Javier Ancin-Murguzur <francisco.j.murguzur@uit.no>
+Description: 
+License: 
+Encoding: UTF-8
+LazyData: true
