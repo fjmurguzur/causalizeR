@@ -18,7 +18,7 @@
 #'
 #' @export
 causalize<-function(texts=NULL,effect=NULL,effect_num=0){
-
+progbar<-txtProgressBar(min=0,max=length(texts),style=3)
   driver<-list()
   affected<-list()
   res.mat<-list()
@@ -61,7 +61,7 @@ causalize<-function(texts=NULL,effect=NULL,effect_num=0){
         }
       }
     }
-
+setTxtProgressBar(progbar,w)
   } #Close full sentence loop, document scan finished
 
   return(do.call(rbind.data.frame, res.mat))
