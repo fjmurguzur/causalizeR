@@ -12,6 +12,7 @@
 #' @export
 
 passivevoice<-function(effect=NULL,sentence=NULL){
+
   driver<-NULL
   affected<-NULL
   for(k in (which(sentence$lemma==effect)-1)[1]:1){
@@ -36,7 +37,7 @@ passivevoice<-function(effect=NULL,sentence=NULL){
 
     if( sentence$upos[m]=="NOUN"){
       if(m==length(sentence$lemma)){
-        if(sentence$upos[m-1]=="ADJ"){affected<-paste(sentence$lemma[m-1],sentence$lemma[m],collapse="_")} else {
+        if(sentence$upos[m-1]=="ADJ"){driver<-paste(sentence$lemma[m-1],sentence$lemma[m],collapse="_")} else {
           driver<-sentence$lemma[m]}} else
             if(sentence$upos[m+1]=="NOUN"){  # for "JJ" it is m-1 because adjectives always come before the sustantive
               driver<-paste(sentence$lemma[m],sentence$lemma[m+1],collapse="_")}

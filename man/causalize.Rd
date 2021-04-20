@@ -4,7 +4,7 @@
 \alias{causalize}
 \title{Causal link extraction from unstructured texts}
 \usage{
-causalize(texts = NULL, effect = NULL, effect_num = 0)
+causalize(texts = NULL, effect = NULL, effect_num = 0, tokenizer = NULL)
 }
 \arguments{
 \item{texts}{The vector (or column of a data frame) containing the documents to analyze.}
@@ -12,6 +12,8 @@ causalize(texts = NULL, effect = NULL, effect_num = 0)
 \item{effect}{a keyword (character string) to extract nouns before and after it}
 
 \item{effect_num}{the weight of the effect and its direction (positive or negative)}
+
+\item{tokenizer}{the udpipe language model. If NULL (default) it will be downloaded from the server, otherwise it has to be specified.}
 }
 \value{
 A data.frame with the driver, affected parameter, effect, effect weight and the text number
@@ -20,8 +22,8 @@ A data.frame with the driver, affected parameter, effect, effect weight and the 
 Extracts the causal relation in texts
 }
 \examples{
-library(coreNLP)
-initCoreNLP()
+library(udpipe)
+
 example.data<-"Predation decreases herbivore populations"
 causalize(example.data,"decrease",(-1))
 
