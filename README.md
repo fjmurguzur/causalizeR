@@ -12,6 +12,7 @@ To install the package, install directly from github:
 _Example usage_
 
 >library(causalizeR)
+>library(udpipe)
 >
 >example.data<-"Predation decreases herbivore populations"
 >causalize(example.data,"decrease",(-1))
