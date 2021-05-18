@@ -7,7 +7,7 @@ This package allows to extract the effects of drivers on the ecosystem from lite
 
 To install the package, install directly from github:
 
->devtools::install_github("https://github.com/remi-daigle/flickRgeotag")
+>devtools::install_github("fjmurguzur/causalizeR")
 
 _Example usage_
 
